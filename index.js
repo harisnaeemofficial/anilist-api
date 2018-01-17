@@ -22,16 +22,33 @@ class Anilist {
             }
         });
     }
+
+    get_season(month) {
+        // Between January and March
+        if (month >= 0 && month < 3)
+            return 'Winter'
+        // Between April and June
+        if (month >= 3 && month < 6)
+            return 'Spring'
+        // Between July and September
+        if (month >= 6 && month < 9)
+            return 'Summer'
+        // Between October and December
+        return 'Fall'
+    }
+
     get_season_releases() {
-        console.log(this.headers)
+        var date = new Date()
+        var year = date.getFullYear()
+        var month = this.get_season(date.getMonth())
         return axios.get(
             'https://anilist.co/api/browse/anime',
             {
                 params: {
                     'sort'  : 'popularity-desc',
-                    'year'  : '2017',
+                    'year'  : year,
                     'status': 'Currently Airing',
-                    'season': 'Fall',
+                    'season': month,
                     'airing_data': 'true'
                 },
                 headers: this.headers,
