@@ -1,0 +1,13 @@
+{
+  "name": "anilist-api",
+  "version": "0.0.1",
+  "main": "index.js",
+  "repository": "https://github.com/stackexploit/anilist-api.git",
+  "author": "stackexploit",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^0.17.1",
+    "axios-cookiejar-support": "^0.3.2",
+    "set-cookie-parser": "^2.0.0"
+  }
+}
