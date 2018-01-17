@@ -68,4 +68,15 @@ class Anilist {
             }
         )
     }
+
+    search_anime(search) {
+        return axios.get(
+            'https://anilist.co/api/anime/search/' + search,
+            {
+                headers: this.headers,
+                jar: cookieJar,
+                withCredentials: true
+            }
+        )
+    }
 }
