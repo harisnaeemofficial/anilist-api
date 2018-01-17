@@ -57,4 +57,15 @@ class Anilist {
             }
         )
     }
+
+    get_anime_details(id) {
+        return axios.get(
+            'https://anilist.co/api/anime/' + id,
+            {
+                headers: this.headers,
+                jar: cookieJar,
+                withCredentials: true
+            }
+        )
+    }
 }
