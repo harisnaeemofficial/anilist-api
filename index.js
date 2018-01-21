@@ -22,6 +22,10 @@ class Anilist {
             }
         });
     }
+    
+    return_resolve(res){
+        return res.data
+    }
 
     get_season(month) {
         // Between January and March
@@ -55,9 +59,7 @@ class Anilist {
                 jar: cookieJar,
                 withCredentials: true
             }
-        ).then((res) => {
-            return res.data
-        })
+        ).then(return_resolve)
     }
 
     get_anime_details(id) {
@@ -68,9 +70,7 @@ class Anilist {
                 jar: cookieJar,
                 withCredentials: true
             }
-        ).then((res) => {
-            return res.data
-        })
+        ).then(return_resolve)
     }
 
     search_anime(search) {
@@ -81,9 +81,7 @@ class Anilist {
                 jar: cookieJar,
                 withCredentials: true
             }
-        ).then((res) => {
-            return res.data
-        })
+        ).then(return_resolve)
     }
 }
 
