@@ -6,7 +6,7 @@ axiosCookieJarSupport(axios);
 const cookieJar = new tough.CookieJar();
 
 
-export default class Anilist {
+class Anilist {
     init() {
         this.headers = {'authority': 'anilist.co'}
         return axios.get('https://anilist.co/browse/anime', {
@@ -80,3 +80,5 @@ export default class Anilist {
         )
     }
 }
+
+exports.default = Anilist;
