@@ -59,7 +59,7 @@ class Anilist {
                 jar: cookieJar,
                 withCredentials: true
             }
-        ).then(return_resolve)
+        ).then(this.return_resolve)
     }
 
     get_anime_details(id) {
@@ -70,7 +70,7 @@ class Anilist {
                 jar: cookieJar,
                 withCredentials: true
             }
-        ).then(return_resolve)
+        ).then(this.return_resolve)
     }
 
     search_anime(search) {
@@ -81,7 +81,7 @@ class Anilist {
                 jar: cookieJar,
                 withCredentials: true
             }
-        ).then(return_resolve)
+        ).then(this.return_resolve)
     }
 }
 
