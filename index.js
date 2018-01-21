@@ -59,7 +59,9 @@ class Anilist {
                 jar: cookieJar,
                 withCredentials: true
             }
-        ).then(this.return_resolve)
+        ).then((res) => {
+            return res.data
+        })
     }
 
     get_anime_details(id) {
@@ -70,7 +72,11 @@ class Anilist {
                 jar: cookieJar,
                 withCredentials: true
             }
-        ).then(this.return_resolve)
+        ).then((res) => {
+            return new Promise(function(resolve, reject) {
+                resolve(res.data)
+            });
+        })
     }
 
     search_anime(search) {
@@ -81,7 +87,11 @@ class Anilist {
                 jar: cookieJar,
                 withCredentials: true
             }
-        ).then(this.return_resolve)
+        ).then((res) => {
+            return new Promise(function(resolve, reject) {
+                resolve(res.data)
+            });
+        })
     }
 }
 
