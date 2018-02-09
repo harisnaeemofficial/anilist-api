@@ -5,7 +5,6 @@ const tough = require('tough-cookie');
 axiosCookieJarSupport(axios);
 const cookieJar = new tough.CookieJar();
 
-
 class Anilist {
     init() {
         this.headers = {'authority': 'anilist.co'}
@@ -95,4 +94,4 @@ class Anilist {
     }
 }
 
-exports.default = Anilist;
+module.exports = Anilist;
